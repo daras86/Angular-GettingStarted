@@ -9,18 +9,12 @@ import { RouterModule } from '@angular/router';
 import { ProductGuardService } from './product-guard.service';
 import { ProductService } from './product.service';
 import { SharedModule } from './../shared/shared.module';
+import { ProductRoutingModule } from './product-routing.module';
 
 @NgModule({
-  imports: [
-    RouterModule.forChild([
-      { path: 'products', component: ProductListComponent },
-      {
-        path: 'products/:id',
-        canActivate: [ProductGuardService],
-        component: ProductDetailComponent
-      }
-    ]),
+  imports: [    
     SharedModule,
+    ProductRoutingModule,
   ],
   declarations: [
     ProductListComponent,
